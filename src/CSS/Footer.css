@@ -1,0 +1,10 @@
+.footer {
+    text-align: center;
+    padding: 0.4rem;
+    font-size: 0.7rem;
+    color: #333333;
+    background-color: #F1EFEC;
+    border-top: 1px solid #ccc; /* optional separator */
+    margin-top: auto; /* ensure footer stays at the bottom if using flex layout */
+  }
+  
