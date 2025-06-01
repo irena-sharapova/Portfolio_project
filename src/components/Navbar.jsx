@@ -1,13 +1,25 @@
+import { Navbar, Container, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import './Navbar.css';
 
-export default function Navbar() {
+
+function MyNavbar() {
   return (
-    <nav className="bg-white border border-black shadow p-4 flex gap-6">
-      <Link to="/">Home</Link>
-      <Link to="/portraits">Portraits</Link>
-      <Link to="/landscapes">Landscapes</Link>
-      <Link to="/products">Products</Link>
-      <Link to="/contact">Contact</Link>
-    </nav>
+    <Navbar expand="lg" className="mb-4 shadow-sm custom-navbar">
+      <Container>
+        <Navbar.Brand as={Link} to="/">My Portfolio</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link as={Link} to="/">Home</Nav.Link>
+            <Nav.Link as={Link} to="/portraits">Portraits</Nav.Link>
+            <Nav.Link as={Link} to="/landscapes">Landscapes</Nav.Link>
+            <Nav.Link as={Link} to="/products">Products</Nav.Link>
+            <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
+export default MyNavbar;

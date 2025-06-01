@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import MyNavbar from './components/Navbar';
 import Home from './pages/Home';
 import Portraits from './pages/Portraits';
 import Landscapes from './pages/Landscapes';
@@ -9,7 +9,7 @@ import Contact from './pages/Contact';
 function App() {
   return (
     <Router>
-      <Navbar />
+      <MyNavbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/portraits" element={<Portraits />} />
