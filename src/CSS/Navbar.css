@@ -1,0 +1,21 @@
+.custom-navbar {
+  background-color: #F1EFEC;
+}
+
+.custom-navbar .nav-link,
+.custom-navbar {
+  color: #333333;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .navbar-brand:hover {
+  color: #000000;
+}
+
+.navbar-brand.brand-name {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 2rem;
+  color: #333333;
+}
