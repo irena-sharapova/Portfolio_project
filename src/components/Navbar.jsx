@@ -14,10 +14,11 @@ function MyNavbar() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto gap-4">
-                        <Nav.Link as={Link} to="/">Home</Nav.Link>
-                        <Nav.Link as={Link} to="/portraits">Portraits</Nav.Link>
-                        <Nav.Link as={Link} to="/landscapes">Landscapes</Nav.Link>
-                        <Nav.Link as={Link} to="/products">Products</Nav.Link>
+                        <Nav.Link as={Link} to="/">Overview</Nav.Link>
+                        <Nav.Link as={Link} to="/aboutme">About Me</Nav.Link>
+                        <Nav.Link as={Link} to="/people">People</Nav.Link>
+                        <Nav.Link as={Link} to="/nature">Nature</Nav.Link>
+                        <Nav.Link as={Link} to="/things">Things</Nav.Link>
                         <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
                     <Nav.Link
                         href="https://www.instagram.com/irena_sharapova/"

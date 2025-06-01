@@ -1,11 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MyNavbar from './components/Navbar';
-import Home from './pages/Home';
-import Portraits from './pages/Portraits';
-import Landscapes from './pages/Landscapes';
-import Products from './pages/Products';
+import Overview from './pages/Overview';
+import AboutMe from './pages/AboutMe';
+import People from './pages/People';
+import Nature from './pages/Nature';
+import Things from './pages/Things';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
+
 
 
 function App() {
@@ -14,10 +16,11 @@ function App() {
       <MyNavbar />
       <div style={{ flex: 1 }}>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/portraits" element={<Portraits />} />
-        <Route path="/landscapes" element={<Landscapes />} />
-        <Route path="/products" element={<Products />} />
+        <Route path="/" element={<Overview />} />
+        <Route path="/aboutme" element={<AboutMe />} />
+        <Route path="/people" element={<People />} />
+        <Route path="/nature" element={<Nature />} />
+        <Route path="/things" element={<Things />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       </div>
