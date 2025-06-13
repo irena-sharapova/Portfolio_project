@@ -1,7 +1,6 @@
-import { useState } from 'react';
-import 'react-image-lightbox/style.css';
-import Lightbox from 'react-image-lightbox';
-import '../CSS/Overview.css'; 
+import { Gallery, Item } from 'react-photoswipe-gallery';
+import 'photoswipe/dist/photoswipe.css';
+import '../CSS/Overview.css';
 
 const images = Object.values(
   import.meta.glob('../assets/Images/images_overview/*.{jpg,jpeg,png}', {
@@ -12,38 +11,29 @@ const images = Object.values(
 );
 
 export default function Overview() {
-  const [photoIndex, setPhotoIndex] = useState(0);
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <div className="photo-grid">
-      {images.map((src, index) => (
-        <img
-          key={index}
-          src={src}
-          alt={`Photo ${index + 1}`}
-          className="photo-item"
-          onClick={() => {
-            setPhotoIndex(index);
-            setIsOpen(true);
-          }}
-        />
-      ))}
-
-      {isOpen && (
-        <Lightbox
-          mainSrc={images[photoIndex]}
-          nextSrc={images[(photoIndex + 1) % images.length]}
-          prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-          onCloseRequest={() => setIsOpen(false)}
-          onMovePrevRequest={() =>
-            setPhotoIndex((photoIndex + images.length - 1) % images.length)
-          }
-          onMoveNextRequest={() =>
-            setPhotoIndex((photoIndex + 1) % images.length)
-          }
-        />
-      )}
-    </div>
+    <Gallery>
+      <div className="photo-grid">
+        {images.map((src, index) => (
+          <Item
+            key={index}
+            original={src}
+            thumbnail={src}
+            width="1200"
+            height="800"
+          >
+            {({ ref, open }) => (
+              <img
+                ref={ref}
+                onClick={open}
+                src={src}
+                alt={`Photo ${index + 1}`}
+                className="photo-item"
+              />
+            )}
+          </Item>
+        ))}
+      </div>
+    </Gallery>
   );
 }
