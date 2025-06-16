@@ -38,27 +38,27 @@ export default function Overview() {
 
   return (
     <Gallery>
-      <div className="photo-grid">
-        {images.map((src, index) => (
-          <Item
-            key={index}
-            original={src}
-            thumbnail={src}
-            width={imageDimensions[index]?.width || 1200}
-            height={imageDimensions[index]?.height || 800}
-          >
-            {({ ref, open }) => (
-              <img
-                ref={ref}
-                onClick={open}
-                src={src}
-                className="photo-item"
-                alt={`Gallery image ${index + 1}`}
-              />
-            )}
-          </Item>
-        ))}
-      </div>
-    </Gallery>
+    <div className="photo-grid">
+      {images.map((src, index) => (
+        <Item
+          key={index}
+          original={src}
+          thumbnail={src}
+          width={imageDimensions[index]?.width || 1200}
+          height={imageDimensions[index]?.height || 800}
+        >
+          {({ ref, open }) => (
+            <img
+              ref={ref}
+              onClick={open}
+              src={src}
+              className="photo-item"
+              alt={`Gallery image ${index + 1}`}
+            />
+          )}
+        </Item>
+      ))}
+    </div>
+  </Gallery>
   );
 }
