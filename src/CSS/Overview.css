@@ -1,20 +1,18 @@
 .photo-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 images in a row */
-    gap: 0.5rem;
-    padding: 0 2rem; /* horizontal space */
-  }
-  
-  .photo-item {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-    cursor: pointer;
-    transition: transform 0.3s;
-  }
-  
-  .photo-item:hover {
-    transform: scale(1.05);
-  }
-  
+  column-count: 4; 
+  column-gap: 1rem;
+  padding: 0 2rem; 
+}
+
+.photo-item {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  display: block;
+}
+
+.photo-item:hover {
+  transform: scale(1.03);
+}

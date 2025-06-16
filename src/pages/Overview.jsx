@@ -1,4 +1,5 @@
 import { Gallery, Item } from 'react-photoswipe-gallery';
+import { useState, useEffect } from 'react';
 import 'photoswipe/dist/photoswipe.css';
 import '../CSS/Overview.css';
 
@@ -11,6 +12,30 @@ const images = Object.values(
 );
 
 export default function Overview() {
+  const [imageDimensions, setImageDimensions] = useState([]);
+
+  useEffect(() => {
+    const loadImageDimensions = async () => {
+      const dimensions = await Promise.all(
+        images.map(src => {
+          return new Promise((resolve) => {
+            const img = new Image();
+            img.src = src;
+            img.onload = () => {
+              resolve({
+                width: img.naturalWidth,
+                height: img.naturalHeight
+              });
+            };
+          });
+        })
+      );
+      setImageDimensions(dimensions);
+    };
+
+    loadImageDimensions();
+  }, []);
+
   return (
     <Gallery>
       <div className="photo-grid">
@@ -19,16 +44,16 @@ export default function Overview() {
             key={index}
             original={src}
             thumbnail={src}
-            width="1200"
-            height="800"
+            width={imageDimensions[index]?.width || 1200}
+            height={imageDimensions[index]?.height || 800}
           >
             {({ ref, open }) => (
               <img
                 ref={ref}
                 onClick={open}
                 src={src}
-                alt={`Photo ${index + 1}`}
                 className="photo-item"
+                alt={`Gallery image ${index + 1}`}
               />
             )}
           </Item>
