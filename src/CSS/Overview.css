@@ -1,18 +1,89 @@
-.photo-grid {
-  column-count: 4;
-  column-gap: 1rem;
-  padding: 0 2rem;
+
+.scroll-section {
+  padding: 3rem 2rem 2rem;
+  background-color: #F1EFEC;
 }
 
-.photo-item {
-  width: 100%;
+.gallery-section {
+  margin-bottom: 5rem;
+}
+
+h2 {
   margin-bottom: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.3s;
-  display: block;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #222;
+  border-left: 4px solid #646cff;
+  padding-left: 0.8rem;
 }
 
-.photo-item:hover {
-  transform: scale(1.03);
+.scroll-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  scroll-snap-type: x mandatory;
+  padding: 1rem 0 1rem 0.5rem;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-photo {
+  flex: 0 0 auto;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  scroll-snap-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.scroll-photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.scroll-arrow {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  padding: 0.4rem;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-arrow:hover {
+  background-color: #e4e4e4;
+}
+
+.scroll-arrow.left {
+  position: absolute;
+  left: -18px;
+}
+
+.scroll-arrow.right {
+  position: absolute;
+  right: -18px;
+}
+
+.scroll-arrow svg {
+  width: 22px;
+  height: 22px;
+  fill: #555;
 }
