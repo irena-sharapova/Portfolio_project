@@ -1,5 +1,5 @@
-import { Navbar, Container } from 'react-bootstrap';
-import { NavLink, useLocation } from 'react-router-dom';
+import { Navbar, Container, Nav } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 import { FaInstagram } from 'react-icons/fa';
 import '../CSS/Navbar.css';
 
@@ -10,9 +10,12 @@ function MyNavbar() {
         <Navbar.Brand as={NavLink} to="/" className="brand-name">
           Irina Sharapova
         </Navbar.Brand>
+
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
         <Navbar.Collapse id="basic-navbar-nav">
-          <div className="ms-auto d-flex gap-4 align-items-center">
+        <Nav className="ms-auto d-flex flex-column flex-lg-row gap-4 align-items-start align-items-lg-center">
+          {/* <Nav className="ms-auto d-flex gap-4 align-items-center"> */}
             <NavLink 
               to="/" 
               className={({ isActive }) => 
@@ -45,10 +48,20 @@ function MyNavbar() {
             >
               Nature
             </NavLink>
-            <NavLink to="/aboutme" className={({ isActive }) => isActive ? 'active-link nav-link' : 'nav-link'}>
+            <NavLink 
+              to="/aboutme" 
+              className={({ isActive }) => 
+                isActive ? 'nav-link active' : 'nav-link'
+              }
+            >
               About Me
             </NavLink>
-            <NavLink to="/contact" className={({ isActive }) => isActive ? 'active-link nav-link' : 'nav-link'}>
+            <NavLink 
+              to="/contact" 
+              className={({ isActive }) => 
+                isActive ? 'nav-link active' : 'nav-link'
+              }
+            >
               Contact
             </NavLink>
             <a
@@ -60,7 +73,7 @@ function MyNavbar() {
             >
               <FaInstagram size={24} color="#333" />
             </a>
-          </div>
+          </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>

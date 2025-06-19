@@ -2,6 +2,7 @@ import { Gallery, Item } from 'react-photoswipe-gallery';
 import { useState, useEffect, useRef } from 'react';
 import 'photoswipe/dist/photoswipe.css';
 import '../CSS/Overview.css';
+import profilePhoto from '../assets/Images/portfolio_2.jpg';
 
 const allImages = Object.entries(
   import.meta.glob('../assets/Images/images_overview/*.{jpg,jpeg,png}', {
@@ -15,10 +16,7 @@ const allImages = Object.entries(
   return { src: url, type };
 });
 
-const portraitImages = allImages.filter(img => img.type === 'people');
-const natureThingsImages = allImages.filter(
-  img => img.type === 'nature' || img.type === 'things'
-);
+const combinedImages = [...allImages];
 
 function ScrollGallery({ title, images }) {
   const scrollRef = useRef(null);
@@ -96,11 +94,21 @@ function ScrollGallery({ title, images }) {
 
 export default function Overview() {
   return (
-    <Gallery>
-      <div className="scroll-section">
-        <ScrollGallery title="Portraits" images={portraitImages} />
-        <ScrollGallery title="Nature & Things" images={natureThingsImages} />
+    <>
+      <div className="profile-section">
+        <div className="profile-container">
+          <img src={profilePhoto} alt="Profile" className="profile-photo" />
+          <div className="profile-text">
+            <h1>PORTFOLIO</h1>
+            <p>Bacon ipsum dolor amet beef ribs cupim shankle, jerky jowl kielbasa prosciutto picanha ball tip chuck. Ribeye pancetta swine ham chislic biltong. Tongue pork chop picanha ground round shankle shoulder short ribs. Biltong pastrami drumstick, bresaola turkey boudin pancetta sausage shank ham hock.</p>
+          </div>
+        </div>
       </div>
-    </Gallery>
+      <Gallery>
+        <div className="scroll-section">
+          <ScrollGallery title="Gallery" images={combinedImages} />
+        </div>
+      </Gallery>
+    </>
   );
 }
