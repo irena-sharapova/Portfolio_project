@@ -2,7 +2,7 @@ import { Gallery, Item } from 'react-photoswipe-gallery';
 import { useState, useEffect, useRef } from 'react';
 import 'photoswipe/dist/photoswipe.css';
 import '../CSS/Overview.css';
-import profilePhoto from '../assets/Images/portfolio_2.jpg';
+import profilePhoto from '../assets/Images/portfolio_1.jpg';
 
 const allImages = Object.entries(
   import.meta.glob('../assets/Images/images_overview/*.{jpg,jpeg,png}', {
