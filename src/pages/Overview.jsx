@@ -1,18 +1,18 @@
-import { Gallery, Item } from 'react-photoswipe-gallery';
-import { useState, useEffect, useRef } from 'react';
-import 'photoswipe/dist/photoswipe.css';
-import '../CSS/Overview.css';
-import profilePhoto from '../assets/Images/portfolio_1.jpg';
+import { Gallery, Item } from "react-photoswipe-gallery";
+import { useState, useEffect, useRef } from "react";
+import "photoswipe/dist/photoswipe.css";
+import "../CSS/Overview.css";
+import profilePhoto from "../assets/Images/portfolio_1.jpg";
 
 const allImages = Object.entries(
-  import.meta.glob('../assets/Images/images_overview/*.{jpg,jpeg,png}', {
+  import.meta.glob("../assets/Images/images_overview/*.{jpg,jpeg,png}", {
     eager: true,
-    query: '?url',
-    import: 'default',
+    query: "?url",
+    import: "default",
   })
 ).map(([path, url]) => {
   const typeMatch = path.match(/\/(\w+)_\d+/);
-  const type = typeMatch ? typeMatch[1].toLowerCase() : 'unknown';
+  const type = typeMatch ? typeMatch[1].toLowerCase() : "unknown";
   return { src: url, type };
 });
 
@@ -25,14 +25,14 @@ function ScrollGallery({ title, images }) {
   useEffect(() => {
     const loadDims = async () => {
       const dims = await Promise.all(
-        images.map(img => {
-          return new Promise(resolve => {
+        images.map((img) => {
+          return new Promise((resolve) => {
             const image = new Image();
             image.src = img.src;
             image.onload = () => {
               resolve({
                 width: image.naturalWidth,
-                height: image.naturalHeight
+                height: image.naturalHeight,
               });
             };
           });
@@ -48,8 +48,8 @@ function ScrollGallery({ title, images }) {
     const scrollAmount = 300;
     if (container) {
       container.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth',
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
       });
     }
   };
@@ -58,8 +58,10 @@ function ScrollGallery({ title, images }) {
     <div className="gallery-section">
       <h2>{title}</h2>
       <div className="scroll-wrapper">
-        <button className="scroll-arrow left" onClick={() => scroll('left')}>
-          <svg viewBox="0 0 20 20"><path d="M13 15l-5-5 5-5v10z"/></svg>
+        <button className="scroll-arrow left" onClick={() => scroll("left")}>
+          <svg viewBox="0 0 20 20">
+            <path d="M13 15l-5-5 5-5v10z" />
+          </svg>
         </button>
 
         <div className="horizontal-scroll" ref={scrollRef}>
@@ -84,8 +86,10 @@ function ScrollGallery({ title, images }) {
           ))}
         </div>
 
-        <button className="scroll-arrow right" onClick={() => scroll('right')}>
-          <svg viewBox="0 0 20 20"><path d="M7 5l5 5-5 5V5z"/></svg>
+        <button className="scroll-arrow right" onClick={() => scroll("right")}>
+          <svg viewBox="0 0 20 20">
+            <path d="M7 5l5 5-5 5V5z" />
+          </svg>
         </button>
       </div>
     </div>
@@ -99,14 +103,19 @@ export default function Overview() {
         <div className="profile-container">
           <img src={profilePhoto} alt="Profile" className="profile-photo" />
           <div className="profile-text">
-            <h1>PORTFOLIO</h1>
-            <p>Bacon ipsum dolor amet beef ribs cupim shankle, jerky jowl kielbasa prosciutto picanha ball tip chuck. Ribeye pancetta swine ham chislic biltong. Tongue pork chop picanha ground round shankle shoulder short ribs. Biltong pastrami drumstick, bresaola turkey boudin pancetta sausage shank ham hock.</p>
+            <h1 className="headline">CREATIVE MIND, TECH HEART</h1>
+            <p className="headline-description">
+              Hi, I'm Irina — a developer with a photographer’s eye. I love
+              blending logic and creativity to build digital experiences that
+              feel thoughtful and human. From pixels to code, I believe in work
+              that connects.
+            </p>
           </div>
         </div>
       </div>
       <Gallery>
         <div className="scroll-section">
-          <ScrollGallery title="Gallery" images={combinedImages} />
+          <ScrollGallery images={combinedImages} />
         </div>
       </Gallery>
     </>

@@ -1,0 +1,47 @@
+.about-section {
+    padding: 3rem 2rem;
+    background-color: #f8f8f8;
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .about-container {
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+  
+  .about-container.reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .about-photo {
+    width: 360px;
+    height: auto;
+    object-fit: contain;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+  }
+  
+  .about-photo:hover {
+    transform: scale(1.02);
+  }
+  
+  .about-text {
+    flex: 1;
+  }
+  
+  .about-text h1,
+  .about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .about-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+  }
+  
