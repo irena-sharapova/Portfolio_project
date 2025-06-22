@@ -144,32 +144,27 @@ h2 {
     flex-direction: column;
     text-align: center;
   }
+}
 
   .profile-photo {
     margin-left: 0;
   }
 
-  /* .headline {
-    white-space: normal;
-    font-size: 2rem;
-  }
-   */
-  /* .headline {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #333;
-    font-family: 'Playfair Display', serif;
-  }
-   */
-
   .headline {
+    font-family: 'Playfair Display', serif;
     font-size: 2rem;
-    margin-bottom: 1rem;
+    font-weight: 500; 
     color: #333;
-    font-family: "Playfair Display", serif;
+    margin-bottom: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
-
+  
   .headline-description {
-    max-width: 100%;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    max-width: 700px;
   }
-}

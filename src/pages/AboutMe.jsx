@@ -9,7 +9,7 @@ export default function AboutMe() {
         <div className="about-text">
           <h1>ABOUT ME</h1>
           <p>
-            I'm Irina — a passionate web developer and photographer. My journey
+            Hi, I'm Irina — a passionate web developer and photographer. My journey
             began far from lines of code, rooted in project management and
             visual storytelling through photography. Over time, I discovered a
             love for building digital experiences that are both functional and
