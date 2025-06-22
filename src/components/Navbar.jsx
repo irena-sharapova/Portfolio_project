@@ -20,7 +20,6 @@ function MyNavbar() {
 
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto d-flex flex-column flex-lg-row gap-4 align-items-start align-items-lg-center">
-            {/* <Nav className="ms-auto d-flex gap-4 align-items-center"> */}
             <NavLink
               to="/"
               className={({ isActive }) =>

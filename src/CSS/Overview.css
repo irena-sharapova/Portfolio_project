@@ -129,6 +129,7 @@ h2 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  /* text-indent: 2rem; indents */
 }
 
 .headline-description {
@@ -137,6 +138,7 @@ h2 {
   line-height: 1.6;
   color: #555;
   max-width: 700px;
+  /* text-indent: 2rem; indents */
 }
 
 @media (max-width: 768px) {

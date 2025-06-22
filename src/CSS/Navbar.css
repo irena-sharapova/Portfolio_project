@@ -1,5 +1,5 @@
 .custom-navbar {
-  background-color: #F1EFEC;
+  background-color: #f1efec;
 }
 
 .custom-navbar .nav-link,
@@ -15,21 +15,19 @@
 }
 
 .navbar-brand.brand-name {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-style: italic;
   font-weight: 400;
   font-size: 2rem;
   color: #333333;
 }
 
-
 .active-link {
   border-bottom: 2px solid #646cff;
   font-weight: bold;
   padding-bottom: 0.2rem;
-  color: #000000; 
+  color: #000000;
 }
-
 
 .nav-link {
   padding: 0.5rem 0;
@@ -39,12 +37,12 @@
 }
 
 .nav-link.active::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
-  height: 1px;  
-  bottom: -2px;  
+  height: 1px;
+  bottom: -2px;
   left: 0;
-  background-color: #4a4a4a;  
+  background-color: #4a4a4a;
   transition: all 0.2s ease;
 }
