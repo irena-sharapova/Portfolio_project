@@ -60,14 +60,9 @@ function MyNavbar() {
             >
               About Me
             </NavLink>
-            <NavLink
-              to="/contact"
-              className={({ isActive }) =>
-                isActive ? "nav-link active" : "nav-link"
-              }
-            >
+            <a href="/#contact-note" className="nav-link">
               Contact
-            </NavLink>
+            </a>
             <a
               href="https://www.instagram.com/irena_sharapova/"
               target="_blank"

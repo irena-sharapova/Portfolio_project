@@ -105,10 +105,20 @@ export default function Overview() {
           <div className="profile-text">
             <h1 className="headline">CREATIVE MIND, TECH HEART</h1>
             <p className="headline-description">
-              Hi, I'm Irina — a developer with a photographer’s eye. I love
+              Hi, I'm Irina — a photographer at heart — I love capturing people,
+              places, and products through thoughtful, creative storytelling.
+              Whether it’s a portrait, a styled product shoot, or a landscape
+              glowing with natural light, I find meaning in every frame.
+              {/* a developer with a photographer’s eye. I love
               blending logic and creativity to build digital experiences that
               feel thoughtful and human. From pixels to code, I believe in work
-              that connects.
+              that connects. */}
+              <br />
+              <br />
+              I’m also a web developer with a passion for blending logic and
+              design. From clean, accessible interfaces to intuitive user
+              experiences, I enjoy building digital spaces that feel both
+              functional and personal.
             </p>
           </div>
         </div>
@@ -118,6 +128,14 @@ export default function Overview() {
           <ScrollGallery images={combinedImages} />
         </div>
       </Gallery>
+      <div id="contact-note" className="contact-note">
+  <p>
+    If you're interested in a photoshoot or need a custom website, feel free to <strong>DM me</strong> on  
+    <a href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer"> Instagram</a> or  
+    <a href="https://www.facebook.com/yourusername" target="_blank" rel="noopener noreferrer"> Facebook</a>.
+    I’d love to connect with you!
+  </p>
+</div>
     </>
   );
 }
