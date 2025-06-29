@@ -13,8 +13,7 @@ h2 {
   font-weight: 500;
   font-size: 1.7rem;
   color: #222;
-  border-left: 4px solid #646cff;
-  padding-left: 0.8rem;
+  padding-left: 0rem;
 }
 
 .scroll-wrapper {
@@ -129,7 +128,6 @@ h2 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  /* text-indent: 2rem; indents */
 }
 
 .headline-description {
@@ -138,7 +136,6 @@ h2 {
   line-height: 1.6;
   color: #555;
   max-width: 700px;
-  /* text-indent: 2rem; indents */
 }
 
 @media (max-width: 768px) {
@@ -193,14 +190,19 @@ h2 {
     margin-right: auto;
   }
   
+   .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+  
   .social-links a {
-    margin: 0 1rem;
-    color: #646cff;
-    text-decoration: none;
-    font-weight: 500;
+    color: #333333;
+    transition: color 0.3s ease;
   }
   
   .social-links a:hover {
-    text-decoration: underline;
+    color: #000000;
   }
   

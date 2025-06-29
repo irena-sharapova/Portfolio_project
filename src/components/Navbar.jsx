@@ -60,9 +60,16 @@ function MyNavbar() {
             >
               About Me
             </NavLink>
-            <a href="/#contact-note" className="nav-link">
+            <Nav.Link
+              as="span"
+              className="nav-link"
+              onClick={() => {
+                localStorage.setItem("scrollToContact", "true");
+                window.location.href = "/";
+              }}
+            >
               Contact
-            </a>
+            </Nav.Link>
             <a
               href="https://www.instagram.com/irena_sharapova/"
               target="_blank"

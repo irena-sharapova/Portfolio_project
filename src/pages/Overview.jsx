@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import "photoswipe/dist/photoswipe.css";
 import "../CSS/Overview.css";
 import profilePhoto from "../assets/Images/portfolio_1.jpg";
+import { FaInstagram, FaFacebook } from "react-icons/fa";
 
 const allImages = Object.entries(
   import.meta.glob("../assets/Images/images_overview/*.{jpg,jpeg,png}", {
@@ -97,6 +98,19 @@ function ScrollGallery({ title, images }) {
 }
 
 export default function Overview() {
+  useEffect(() => {
+    const shouldScroll = localStorage.getItem("scrollToContact");
+    if (shouldScroll === "true") {
+      localStorage.removeItem("scrollToContact");
+      setTimeout(() => {
+        const contactSection = document.getElementById("contact-note");
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 300);
+    }
+  }, []);
+
   return (
     <>
       <div className="profile-section">
@@ -109,10 +123,6 @@ export default function Overview() {
               places, and products through thoughtful, creative storytelling.
               Whether it’s a portrait, a styled product shoot, or a landscape
               glowing with natural light, I find meaning in every frame.
-              {/* a developer with a photographer’s eye. I love
-              blending logic and creativity to build digital experiences that
-              feel thoughtful and human. From pixels to code, I believe in work
-              that connects. */}
               <br />
               <br />
               I’m also a web developer with a passion for blending logic and
@@ -129,13 +139,33 @@ export default function Overview() {
         </div>
       </Gallery>
       <div id="contact-note" className="contact-note">
-  <p>
-    If you're interested in a photoshoot or need a custom website, feel free to <strong>DM me</strong> on  
-    <a href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer"> Instagram</a> or  
-    <a href="https://www.facebook.com/yourusername" target="_blank" rel="noopener noreferrer"> Facebook</a>.
-    I’d love to connect with you!
-  </p>
-</div>
+        <h2>Let’s Connect</h2>
+        <p>
+          I'm always open to creative collaborations and new projects. Whether
+          you're looking for a photographer or a website, feel free to{" "}
+          <strong>DM me</strong> on social media!
+          <br />
+          I’d love to hear from you!
+        </p>
+        <div className="social-links">
+          <a
+            href="https://www.instagram.com/irena_sharapova/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <FaInstagram size={28} />
+          </a>
+          <a
+            href="https://www.facebook.com/irina.sharapova.73307"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+          >
+            <FaFacebook size={28} />
+          </a>
+        </div>
+      </div>
     </>
   );
 }
