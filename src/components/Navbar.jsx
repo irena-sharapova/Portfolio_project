@@ -60,7 +60,7 @@ function MyNavbar() {
             >
               About Me
             </NavLink>
-            <Nav.Link
+            <NavLink
               as="span"
               className="nav-link"
               onClick={() => {
@@ -69,7 +69,7 @@ function MyNavbar() {
               }}
             >
               Contact
-            </Nav.Link>
+            </NavLink>
             <a
               href="https://www.instagram.com/irena_sharapova/"
               target="_blank"
