@@ -1,5 +1,6 @@
 // import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+// import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import MyNavbar from './components/Navbar';
 import Overview from './pages/Overview';
 import AboutMe from './pages/AboutMe';
@@ -14,7 +15,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-      <Router>
+      {/* <Router> */}
         <MyNavbar />
         <div style={{ flex: 1 }}>
           <Routes>
@@ -27,7 +28,7 @@ function App() {
           </Routes>
         </div>
         <Footer />
-      </Router>
+      {/* </Router> */}
     </div>
   );
 }
