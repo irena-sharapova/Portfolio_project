@@ -7,7 +7,7 @@ import AboutMe from './pages/AboutMe';
 import People from './pages/People';
 import Nature from './pages/Nature';
 import Things from './pages/Things';
-import Contact from './pages/Contact';
+// import Contact from './pages/Contact';
 import Footer from './components/Footer';
 
 
@@ -24,7 +24,7 @@ function App() {
             <Route path="/people" element={<People />} />
             <Route path="/nature" element={<Nature />} />
             <Route path="/things" element={<Things />} />
-            <Route path="/contact" element={<Contact />} />
+            {/* <Route path="/contact" element={<Contact />} /> */}
           </Routes>
         </div>
         <Footer />

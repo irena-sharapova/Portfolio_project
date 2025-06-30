@@ -5,6 +5,10 @@ import "../CSS/Navbar.css";
 import logo from "../assets/logo_picture_clear.png";
 
 function MyNavbar() {
+  function handleContactClick() {
+    localStorage.setItem("scrollToContact", "true");
+  }
+
   return (
     <Navbar expand="lg" className="mb-4 shadow-sm custom-navbar">
       <Container>
@@ -60,14 +64,7 @@ function MyNavbar() {
             >
               About Me
             </NavLink>
-            <NavLink
-              as="span"
-              className="nav-link"
-              onClick={() => {
-                localStorage.setItem("scrollToContact", "true");
-                window.location.href = "/";
-              }}
-            >
+            <NavLink to="/" className="nav-link" onClick={handleContactClick}>
               Contact
             </NavLink>
             <a
